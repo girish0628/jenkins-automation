@@ -3,6 +3,20 @@ import traceback
 from pathlib import Path
 from typing import Any, Dict
 
+class TestResult:
+    def __init__(self, name, success, message="", details=None):
+        self.name = name
+        self.success = success
+        self.message = message
+        self.details = details or {}
+
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "success": self.success,
+            "message": self.message,
+            "details": self.details
+        }
 
 def load_config(path: str) -> Dict[str, Any]:
     with open(path, "r", encoding="utf-8") as f:
