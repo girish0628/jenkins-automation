@@ -1,0 +1,86 @@
+{
+    "node": "Girish",
+    "environment": "DEV",
+    "timestamp": "2026-03-04T15:52:39.301407",
+    "results": [
+        {
+            "name": "EnvVariableCheck",
+            "success": false,
+            "message": "Environment variables validation",
+            "details": {
+                "ArcPy3": {
+                    "variable": "GCC_ArcPy3",
+                    "value": null
+                },
+                "ArcPy2": {
+                    "variable": "GCC_ArcPy2",
+                    "value": null
+                },
+                "VulcanV12": {
+                    "variable": "GCC_VulcanV12",
+                    "value": null
+                }
+            },
+            "timestamp": "2026-03-04T15:52:36.483791"
+        },
+        {
+            "name": "ToolCheck",
+            "success": false,
+            "message": "Tool version check",
+            "details": {
+                "node": "v22.18.0",
+                "fme": "'fme' is not recognized as an internal or external command,\r\noperable program or batch file.\r\n"
+            },
+            "timestamp": "2026-03-04T15:52:36.585017"
+        },
+        {
+            "name": "ArcPyCheck",
+            "success": false,
+            "message": "ArcPy python environment not found",
+            "details": {},
+            "timestamp": "2026-03-04T15:52:36.484706"
+        },
+        {
+            "name": "SDEReadCheck",
+            "success": false,
+            "message": "SDE Read failed",
+            "details": "expected str, bytes or os.PathLike object, not NoneType",
+            "timestamp": "2026-03-04T15:52:36.485224"
+        },
+        {
+            "name": "NetworkShareCheck",
+            "success": false,
+            "message": "Network share test",
+            "details": [
+                {
+                    "path": "\\\\server\\jenkins\\workspace",
+                    "error": "[Errno 2] No such file or directory: '\\\\\\\\server\\\\jenkins\\\\workspace\\\\jenkins_test_1772610756.txt'"
+                }
+            ],
+            "timestamp": "2026-03-04T15:52:39.216740"
+        },
+        {
+            "name": "JenkinsAgentCheck",
+            "success": false,
+            "message": "Jenkins API error",
+            "details": "HTTPSConnectionPool(host='jenkins.company.com', port=443): Max retries exceeded with url: /computer/api/json (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x0000022DF4416CF0>: Failed to resolve 'jenkins.company.com' ([Errno 11001] getaddrinfo failed)\"))",
+            "timestamp": "2026-03-04T15:52:36.724417"
+        },
+        {
+            "name": "GitLabCheck",
+            "success": false,
+            "message": "GitLab PAT invalid",
+            "details": "{\"message\":\"401 Unauthorized\"}",
+            "timestamp": "2026-03-04T15:52:37.082219"
+        },
+        {
+            "name": "DiskCheck",
+            "success": true,
+            "message": "Disk space validation",
+            "details": {
+                "free_gb": 126.22503662109375
+            },
+            "timestamp": "2026-03-04T15:52:36.488755"
+        }
+    ]
+}

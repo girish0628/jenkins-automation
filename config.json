@@ -1,13 +1,5 @@
 {
   "environment": "DEV",
-  "run_parallel": true,
-  "max_workers": 6,
-  "report_dir": "reports",
-
-  "expected_nodes": [
-    { "name": "jenkins-node-01", "labels": ["windows", "arcpy3"] },
-    { "name": "jenkins-node-02", "labels": ["windows", "fme"] }
-  ],
 
   "env_variables": {
     "ArcPy3": "GCC_ArcPy3",
@@ -17,64 +9,35 @@
 
   "tools": {
     "node_cmd": "node",
-    "fme_cmd": "fme",
-    "fme_version_args": ["--version"]
+    "fme_cmd": "fme"
   },
 
   "network_shares": [
-    { "path": "\\\\server\\share\\jenkins_test", "rw_test": true }
+    {
+      "path": "\\\\server\\jenkins\\workspace"
+    }
   ],
 
   "sde_read_test": {
-    "enabled": true,
     "arcpy_python_env_var": "GCC_ArcPy3",
     "sde_connection_file": "C:\\GIS\\connections\\prod.sde",
     "dataset": "DBO.RoadCenterlines",
-    "where": "1=1",
     "max_rows": 5
   },
 
-  "license_checks": {
-    "enabled": true,
-    "arcpy3_env_var": "GCC_ArcPy3",
-    "arcpy2_env_var": "GCC_ArcPy2",
-    "check_arcpy_import": true,
-    "check_product_info": true
-  },
-
   "jenkins": {
-    "url": "https://YOUR_JENKINS_URL",
-    "user": "YOUR_USER",
-    "api_token": "YOUR_API_TOKEN",
-
-    "jobs": {
-      "trigger_test_job": "ops-trigger-test",
-      "chain_upstream_job": "ops-chain-upstream",
-      "chain_downstream_job": "ops-chain-downstream",
-      "email_test_job": "ops-email-test"
-    },
-
-    "verify": {
-      "wait_seconds": 45,
-      "poll_interval_seconds": 3,
-      "console_contains_for_email_success": ["Email was triggered", "Sending email", "emailext"],
-      "downstream_max_lookback_builds": 10
-    }
+    "url": "https://jenkins.company.com",
+    "user": "jenkins_user",
+    "api_token": "YOUR_API_TOKEN"
   },
 
   "gitlab": {
     "api_base": "https://gitlab.com/api/v4",
     "pat": "YOUR_GITLAB_PAT",
-    "project": "GROUP%2FPROJECT"
+    "project": "group%2Frepository"
   },
 
   "disk": {
-    "min_free_gb": 10,
-    "drives": ["C:\\"]
-  },
-
-  "software_inventory": {
-    "enabled": true,
-    "limit": 300
+    "min_free_gb": 10
   }
 }

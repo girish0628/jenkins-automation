@@ -1,0 +1,163 @@
+
+    <html>
+    <head>
+    <title>Jenkins Environment Validation</title>
+    <style>
+
+    body { font-family: Arial; }
+
+    table {
+        border-collapse: collapse;
+        width: 80%;
+    }
+
+    th, td {
+        border:1px solid #ddd;
+        padding:8px;
+    }
+
+    th {
+        background-color:#333;
+        color:white;
+    }
+
+    .pass { color:green; font-weight:bold }
+    .fail { color:red; font-weight:bold }
+
+    </style>
+    </head>
+
+    <body>
+
+    <h2>Jenkins Environment Validation</h2>
+
+    <p><b>Node:</b> Girish</p>
+    <p><b>Environment:</b> DEV</p>
+
+    <table>
+
+    <tr>
+    <th>Check</th>
+    <th>Status</th>
+    <th>Message</th>
+    </tr>
+
+    
+
+    <tr>
+
+    <td>EnvVariableCheck</td>
+
+    <td class="fail">
+    FAIL
+    </td>
+
+    <td>Environment variables validation</td>
+
+    </tr>
+
+    
+
+    <tr>
+
+    <td>ToolCheck</td>
+
+    <td class="fail">
+    FAIL
+    </td>
+
+    <td>Tool version check</td>
+
+    </tr>
+
+    
+
+    <tr>
+
+    <td>ArcPyCheck</td>
+
+    <td class="fail">
+    FAIL
+    </td>
+
+    <td>ArcPy python environment not found</td>
+
+    </tr>
+
+    
+
+    <tr>
+
+    <td>SDEReadCheck</td>
+
+    <td class="fail">
+    FAIL
+    </td>
+
+    <td>SDE Read failed</td>
+
+    </tr>
+
+    
+
+    <tr>
+
+    <td>NetworkShareCheck</td>
+
+    <td class="fail">
+    FAIL
+    </td>
+
+    <td>Network share test</td>
+
+    </tr>
+
+    
+
+    <tr>
+
+    <td>JenkinsAgentCheck</td>
+
+    <td class="fail">
+    FAIL
+    </td>
+
+    <td>Jenkins API error</td>
+
+    </tr>
+
+    
+
+    <tr>
+
+    <td>GitLabCheck</td>
+
+    <td class="fail">
+    FAIL
+    </td>
+
+    <td>GitLab PAT invalid</td>
+
+    </tr>
+
+    
+
+    <tr>
+
+    <td>DiskCheck</td>
+
+    <td class="pass">
+    PASS
+    </td>
+
+    <td>Disk space validation</td>
+
+    </tr>
+
+    
+
+    </table>
+
+    </body>
+    </html>
+    
